@@ -20,4 +20,29 @@ module And
     end
 
   end
+
+  class Triple
+    include And
+
+    attr_accessor :input_a, :input_b, :input_c
+
+    def initialize
+      @input_a = 0
+      @input_b = 0
+      @input_c = 0
+    end
+  end
+
+  class Multi
+    include And
+
+    attr_accessor :input_a, :input_b, :input_c, :input_d
+
+    def initialize
+      @input_a = 0
+      @input_b = 0
+      @input_c = 0
+      @input_d = 0
+    end
+  end
 end

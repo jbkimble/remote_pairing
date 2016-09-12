@@ -33,6 +33,97 @@ class DoubleTest < Minitest::Test
     assert_equal 1, tr.output
   end
 
+  def test_that_it_can_return_zero
+    tr = And::Double.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_b = 0
 
+    assert_equal 0, tr.output
+  end
 
+  def test_that_it_can_return_double_zero
+    tr = And::Double.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_b = 0
+    tr.input_a = 0
+
+    assert_equal 0, tr.output
+  end
+
+  def test_triple_can_be_created
+    tr = And::Triple.new
+
+    assert_equal 0, tr.output
+  end
+
+  def test_that_output_to_zero_correct
+    tr = And::Triple.new
+    tr.input_a = 1
+    tr.input_b = 1
+
+    assert_equal 0, tr.output
+  end
+
+  def test_that_output_is_correct
+    tr = And::Triple.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_c = 1
+
+    assert_equal 1, tr.output
+  end
+
+  def test_that_output_to_zero_correct
+    tr = And::Triple.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_c = 0
+
+    assert_equal 0, tr.output
+
+    tr.input_c = 1
+
+    assert_equal 1, tr.output
+  end
+
+  def test_multi_can_be_created
+    tr = And::Multi.new
+
+    assert_equal 0, tr.output
+  end
+
+  def test_that_multi_output_to_zero_correct
+    tr = And::Multi.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_c = 1
+
+    assert_equal 0, tr.output
+  end
+
+  def test_that_multi_output_is_correct
+    tr = And::Multi.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_c = 1
+    tr.input_d = 1
+
+    assert_equal 1, tr.output
+  end
+
+  def test_that_multi_output_to_zero_correct
+    tr = And::Multi.new
+    tr.input_a = 1
+    tr.input_b = 1
+    tr.input_c = 1
+    tr.input_d = 0
+
+    assert_equal 0, tr.output
+
+    tr.input_d = 1
+
+    assert_equal 1, tr.output
+  end
 end
